@@ -1,0 +1,251 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+       <title>TeleTroll</title>
+       <link rel="stylesheet" type="text/css" href="cutiehack.css">
+    </head>
+
+    <body>
+        
+    <!-- <form action ="/smsbomber.php"> -->
+    
+        <h1>
+          <img src="https://fontmeme.com/phineas-and-ferb-font/"> 
+        <img src="https://fontmeme.com/permalink/171111/75fbaa5a9912a9bcf111e9d5fda8e87b.png" alt="phineas-and-ferb-font" border="0"> </a> </h1>
+        
+         
+        
+        <div class="boxed">
+            <h2> Send Message </h2>
+            
+            <p> Message (Max 250 character):</p>
+                <input id = "message" type = "text" value ="" size = '25' maxlength = '250'>
+                 
+            <p> Friend's Phone Number:</p>
+                <input id = "phonenumber" type = "password" value ="" size = '25'>
+            
+            <p> Number of Messages:</p>
+                <select id = "messageOption">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                </select>
+      
+                
+            <!-- <input type = "Submit Form" value= "Submit Form"> -->
+            
+            <!-- </form>-->
+                
+                
+            <br> </br>
+        
+            <button onclick = "submitFunction()"> Submit Form </button>
+            
+            <br></br>
+            
+        </div>
+        
+        <br></br>
+        
+        <div class="boxed">
+            <h2> About </h2>
+                
+            <p> This website is used to troll your friends over text. 
+            It's just like prank calling your friends with *67, 
+            but through text messaging! Just enter your friend's name and phone number. 
+            We will text them for you*.
+            
+            <br><br>
+            
+            <small><b>*Text messaging rates may apply, depending on carrier contract. </small></b>
+            </p>
+            
+        </div>
+        
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <script>
+            function submitFunction() {
+                var text;
+                
+                let newMessage = document.getElementById("message").value;
+                let newPhoneNumber = document.getElementById("phonenumber").value;
+                let newNumberOfMessages = document.getElementById("messageOption").value;
+            
+                //HARDCODED AF
+                //CHECK FOR FORM TO BE FILLED OUT
+                if (newMessage ===  "") {
+                    text = "Fill out the message description box";
+                    alert(text);
+                    return;
+                }
+                if (newPhoneNumber === "") {
+                    text = "Fill out the phone number you would wish to message";
+                    alert(text);
+                    return;
+                }
+                //CHECK FOR SUBMISSION
+                //variable newMessage and newPhonenumber and newNumberOfMessages
+                else if (confirm("Are you ready to submit your form") == true) {
+                    text = "Your form has been submitted";
+                    // let newMessage = document.getElementById("message").value;
+                    console.log(newMessage);
+                    // let newPhoneNumber = document.getElementById("phonenumber").value;
+                    console.log(newPhoneNumber);
+                    // let newNumberOfMessages = document.getElementById("messageOption").value;
+                    console.log(newNumberOfMessages);
+                }
+                else {
+                    text = "Form did not submit";
+                }
+                alert(text);
+                
+                window.location.reload();
+ }
+ //last attempt
+var Twilio = require('twilio');
+var accountSid = 'AC201ad40a59cedf71b91e9f9debb287f6';
+var authToken = "6a69d40d4455b90f84cb711d998e48ff";
+var twilio = new Twilio(accountSid, authToken);
+
+// var client = require('twilio')(accountSid, authToken);
+
+          
+  twilio.messages.create({
+  from: "+14243431274",
+  to: "+16268413583",
+  body: 'create using callback'
+}, function(error) {
+  console.log('Created message using callback');
+  console.log(error);
+});
+  
+
+// var accountSid = 'AC201ad40a59cedf71b91e9f9debb287f6'; // Your Account SID from www.twilio.com/console
+// var authToken = '6a69d40d4455b90f84cb711d998e48ff';   // Your Auth Token from www.twilio.com/console
+
+// var twilio = require('twilio');
+// var client = new twilio(accountSid, authToken);
+
+// client.messages.create({
+//     body: 'Hello from Node',
+//     to: '+16268413583',  // Text this number
+//     from: '+14243431274' // From a valid Twilio number
+// }).then((message)function(req, res) { console.log(message.sid)});
+
+// var accountSid = 'AC201ad40a59cedf71b91e9f9debb287f6';
+// var authToken = "6a69d40d4455b90f84cb711d998e48ff";
+// var client = require('twilio')(accountSid, authToken);
+
+// client.keys("SK2a0747eba6abf96b7e3c3ff0b4530f6e")//.get(function(err, key) {
+//     console.log(key.friendlyName);             
+            
+            
+            
+            
+            
+            
+//   var phoneNumber = $("#phoneNumberField).val();
+
+//     var accountSid = 'AC201ad40a59cedf71b91e9f9debb287f6';
+//     var authToken = '6a69d40d4455b90f84cb711d998e48ff';
+
+//   var client = require('twilio')(accountSid, authToken);
+
+//   client.messages.create({ 
+//     to: "+16268413583",
+//     from: "+14243431274",
+//     body: "Hellow from Twilio?",
+//   },
+//   function(err, message) {
+//     console.log(message.sid);
+//   }); 
+
+// var accountSid = 'AC201ad40a59cedf71b91e9f9debb287f6';
+// var apiKey = 'SKXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+// var apiSecret = 'your_api_secret';
+// var client = require('twilio')(apiKey, apiSecret);
+
+// // Create a reference to your Twilio account
+// var account = client.accounts(accountSid);
+
+// // Create a message for your account (send an outbound SMS)
+// account.messages.create({
+//   to: '+15558675309', // the destination phone number
+//   from: '+15017250604', // a Twilio number in your account
+//   body: 'Never gonna give you up.' // body of a text message
+// }, (err, messageData) => {
+//   // print SID of the message you just sent
+//   console.log(messageData.sid);
+// });
+
+
+// final NameValuePair[] data = {
+//     new BasicNameValuePair("phone", "5105090428"),
+//     new BasicNameValuePair("message", "Hello world"),
+//     new BasicNameValuePair("key", "textbelt")
+// };
+// HttpClient httpClient = HttpClients.createMinimal();
+// HttpPost httpPost = new HttpPost("https://textbelt.com/text");
+// httpPost.setEntity(new UrlEncodedFormEntity(Arrays.asList(data)));
+// HttpResponse httpResponse = httpClient.execute(httpPost);
+
+// String responseString = EntityUtils.toString(httpResponse.getEntity());
+// JSONObject response = new JSONObject(responseString);
+// }
+        
+        //??FIGURE HOW TO CONVERT THIS INTO JS    
+    // <?php 
+ 
+// // Get the PHP helper library from twilio.com/docs/php/install 
+// require_once '/path/to/vendor/autoload.php'; // Loads the library 
+//                 let account_sid = ""
+//                 let auth_token = ""
+//                 let client = ""
+//     account_sid = 'AC201ad40a59cedf71b91e9f9debb287f6'; 
+//     auth_token = '[AuthToken]';
+//     client = new Client(newMessage, newPhoneNumber);
+// // use Twilio\Rest\Client; 
+//     messages = client.accounts("AC201ad40a59cedf71b91e9f9debb287f6")
+//     .messages.create("" + newPhoneNumber, array('From = ' + "+14243431274",  'Body = ' + newMessage));
+
+// curl 'https://api.twilio.com/2010-04-01/Accounts/AC201ad40a59cedf71b91e9f9debb287f6/Messages.json' -X POST \
+// --data-urlencode 'To=+16268413583' \
+// --data-urlencode 'From=+14243431274' \
+// --data-urlencode 'Body=asd' \
+// -u AC201ad40a59cedf71b91e9f9debb287f6:6a69d40d4455b90f84cb711d998e48ff
+// var xhr = new XMLHttpRequest()
+
+
+// httpGet({method: 'POST', url: 'https://api.twilio.com/2010-04-01/Accounts/AC201ad40a59cedf71b91e9f9debb287f6/Messages.json', headers: {
+//   'Authorization': '6a69d40d4455b90f84cb711d998e48ff', 
+//   'To': '16268413583', 'From': '14243431274', 'Body': 'asd'}
+// });
+// xhr.open('POST', 'https://api.twilio.com/2010-04-01/Accounts/AC201ad40a59cedf71b91e9f9debb287f6/Messages.json', headers: {
+//   'Authorization': 'AC201ad40a59cedf71b91e9f9debb287f6:6a69d40d4455b90f84cb711d998e48ff', 
+//   'To': '16268413583', 'From': '14243431274', 'Body': 'asd'})
+// xhr.send();
+
+
+// let account_sid = "AC201ad40a59cedf71b91e9f9debb287f6"
+// let auth_token = '[AuthToken]'
+// let client = new Client(account_sid, auth_token); 
+// let messages = client->("AC201ad40a59cedf71b91e9f9debb287f6") -> messages->create ("+16268413583("other person number"), array( 
+//       'From' => "+14243431274",  
+//       'Body' => "asd" (message),    )); 
+// $account_sid = 'AC201ad40a59cedf71b91e9f9debb287f6'; 
+// $auth_token = '[AuthToken]'; 
+// $client = new Client($account_sid, $auth_token); 
+ 
+// $messages = $client->accounts("AC201ad40a59cedf71b91e9f9debb287f6") 
+//   ->messages->create("+16268413583("other person number"), array( 
+//         'From' => "+14243431274",  
+//         'Body' => "asd" (message),      
+//   ));     
+        </script>
+        <!-- 1-951-454-3449 -->
+
+    <small><center><p>made at <a href="https://cutiehack.com/">UCR CutieHack 2017</p></center></small>
+    </body>
+
+</html>
