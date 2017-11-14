@@ -1,0 +1,81 @@
+/*.boxed {*/
+/*    text-align: center;*/
+/*    width: 67%;*/
+/*    border: solid coral;*/
+/*    border-width: thick;*/
+    
+/*    margin: auto;*/
+/*}*/
+
+.boxed{
+    text-align: center;
+    margin: auto;
+    width: 67%;
+    border: 15px solid coral;
+    -webkit-animation: mymove 10s infinite;
+    animation: mymove 10s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove{
+    0% {border-color: solid coral;}
+    25% {border-color: lime;}
+    50% {border-color: green;}
+    55% {border-color; #ffff00;}
+    75% {border-color: chocolate;}
+    100% {border-color: solid coral;}
+}
+
+/* Standard syntax */
+/*@keyframes mymove {*/
+/*    25% {border-color: yellow;}*/
+
+/*}*/
+/*@keyframes mymove{*/
+/*    25% {border-color: red;}*/
+/*}*/
+
+/* Standard syntax */
+/*@keyframes mymove {*/
+/*    25% {border-color: blue;}*/
+
+/*}*/
+
+
+body {
+    background-image: url("https://az616578.vo.msecnd.net/files/2016/09/30/6361085883585803251273673298_Evil_in_the_Tri-State_Area.jpg");*/
+    /*height:250;*/
+    background-size: auto;
+    /*margin: 10 auto;*/
+    /*color: darkblue*/
+    /*background-position: center; */
+    
+}
+    
+
+first {
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+    
+}
+
+h1 {
+    text-decoration: italic;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Comic Sans MS",cursive,sans-serif;
+    
+}
+
+h2 {
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
+    font-family: "Comic Sans MS",cursive,sans-serif;
+    color: Indigo;
+}
+
+p {
+    font-family: "Comic Sans MS",cursive,sans-serif;
+    color: darkblue;
+}
